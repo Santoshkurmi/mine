@@ -1,0 +1,49 @@
+# config.yml
+
+backend:
+  name: github
+  repo: santoshkurmi/santoshkurmi.github.io
+  branch: main # Branch to update (optional; defaults to master)
+  # site_domain: santoshkurmi.me
+  # base_url: "https://tiger"
+  # auth_endpoint: auth?provider=github&site_id=cms.netlify.com&scope=repo\???
+  # cms.netlify.com
+media_folder: "assets/images"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "_posts/"
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Thumbnail", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "pages"
+    label: "Pages"
+    # folder: "_tabs/"
+    editor:
+      preview: false
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "_tabs/about.md"
+        fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "hidden",
+              default: "about",
+            }
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "about",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+
