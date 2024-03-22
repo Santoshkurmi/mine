@@ -1,8 +1,7 @@
 # config.yml
 
 backend:
-  name: github
-  repo: santoshkurmi/santoshkurmi.github.io
+  name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
   # site_domain: santoshkurmi.me
   # base_url: "https://tiger"
